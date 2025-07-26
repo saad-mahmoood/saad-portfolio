@@ -1,48 +1,57 @@
 import React from 'react';
-import { Heart, Github, Linkedin, Mail } from 'lucide-react';
+import { Heart, Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-dark-900 text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-3 gap-8">
+    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-16 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-64 h-64 bg-gradient-to-br from-blue-600/10 to-purple-600/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-gradient-to-br from-emerald-600/10 to-blue-600/10 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid md:grid-cols-3 gap-12">
           <div>
-            <h3 className="text-xl font-bold mb-4">Saad Mahmood</h3>
-            <p className="text-gray-300 mb-4">
+            <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              Saad Mahmood
+            </h3>
+            <p className="text-gray-300 mb-6 leading-relaxed">
               Full Stack Developer passionate about creating innovative web solutions 
-              and contributing to the tech community in Pakistan.
+              and contributing to the tech community. Always excited to work on 
+              challenging projects that make a difference.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-6">
               <a
                 href="https://github.com/saad-mahmoood"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-400 hover:text-white transition-all duration-300 transform hover:scale-110"
               >
-                <Github className="w-5 h-5" />
+                <Github className="w-6 h-6" />
               </a>
               <a
                 href="https://linkedin.com/in/saadmahmoood"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-400 hover:text-blue-400 transition-all duration-300 transform hover:scale-110"
               >
-                <Linkedin className="w-5 h-5" />
+                <Linkedin className="w-6 h-6" />
               </a>
               <a
-                href="mailto:saad@example.com"
-                className="text-gray-400 hover:text-white transition-colors"
+                href="mailto:saad.mhmoood@gmail.com"
+                className="text-gray-400 hover:text-red-400 transition-all duration-300 transform hover:scale-110"
               >
-                <Mail className="w-5 h-5" />
+                <Mail className="w-6 h-6" />
               </a>
             </div>
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <div className="space-y-2">
+            <h4 className="text-xl font-semibold mb-6">Quick Links</h4>
+            <div className="space-y-3">
               {['About', 'Projects', 'Experience', 'Skills', 'Contact'].map((link) => (
                 <button
                   key={link}
@@ -52,7 +61,7 @@ export default function Footer() {
                       section.scrollIntoView({ behavior: 'smooth' });
                     }
                   }}
-                  className="block text-gray-400 hover:text-white transition-colors"
+                  className="block text-gray-400 hover:text-white transition-all duration-300 hover:translate-x-2"
                 >
                   {link}
                 </button>
@@ -61,25 +70,57 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Let's Connect</h4>
-            <p className="text-gray-300 mb-4">
-              Open to new opportunities and interesting projects. 
-              Let's build something amazing together!
-            </p>
-            <div className="space-y-2 text-sm text-gray-400">
-              <p>📍 Lahore, Pakistan</p>
-              <p>📧 saadmhmoood@gmail.com</p>
-              <p>📱 +92 322 0615475 </p>
+            <h4 className="text-xl font-semibold mb-6">Contact Info</h4>
+            <div className="space-y-4">
+              <div className="flex items-center space-x-3 text-gray-300">
+                <MapPin className="w-5 h-5 text-blue-400" />
+                <span>Lahore, Pakistan</span>
+              </div>
+              <div className="flex items-center space-x-3 text-gray-300">
+                <Mail className="w-5 h-5 text-red-400" />
+                <a 
+                  href="mailto:saad.mhmoood@gmail.com"
+                  className="hover:text-white transition-colors"
+                >
+                  saad.mhmoood@gmail.com
+                </a>
+              </div>
+              <div className="flex items-center space-x-3 text-gray-300">
+                <Phone className="w-5 h-5 text-green-400" />
+                <a 
+                  href="tel:+923220615475"
+                  className="hover:text-white transition-colors"
+                >
+                  +92 322 0615475
+                </a>
+              </div>
+            </div>
+
+            <div className="mt-8">
+              <h5 className="text-lg font-semibold mb-4">Let's Connect</h5>
+              <p className="text-gray-400 text-sm">
+                Open to new opportunities and interesting projects. 
+                Let's build something amazing together!
+              </p>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className="text-gray-400 flex items-center justify-center">
-            © {currentYear} Saad Mahmood. Made with{' '}
-            <Heart className="w-4 h-4 mx-1 text-red-500" fill="currentColor" />
-            in Lahore, Pakistan
-          </p>
+        <div className="border-t border-gray-700 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400 flex items-center mb-4 md:mb-0">
+              © {currentYear} Saad Mahmood. Made with{' '}
+              <Heart className="w-4 h-4 mx-1 text-red-500" fill="currentColor" />
+              in Lahore, Pakistan
+            </p>
+            <div className="flex space-x-6 text-sm text-gray-400">
+              <span>Available for hire</span>
+              <span>•</span>
+              <span>Remote friendly</span>
+              <span>•</span>
+              <span>Quick response</span>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
