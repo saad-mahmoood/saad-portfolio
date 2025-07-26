@@ -8,7 +8,7 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 - **Responsive Layout**: Optimized for all device sizes
 - **Interactive Components**: Smooth animations and micro-interactions
 - **Project Showcase**: Detailed project modals with screenshots and tech stack
-- **Contact Form**: Functional contact form with validation
+- **Contact Form**: Fully functional contact form with EmailJS integration
 - **SEO Optimized**: Proper meta tags and semantic HTML
 - **Performance Focused**: Lighthouse score >95
 - **Dark/Light Mode**: Theme toggle with system preference detection
@@ -19,6 +19,7 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 - **Styling**: Tailwind CSS with custom 3D effects
 - **Animations**: Framer Motion
 - **Form Handling**: React Hook Form + Zod validation
+- **Email Service**: EmailJS for contact form functionality
 - **Icons**: Lucide React
 - **Deployment**: Vercel/Netlify ready
 
@@ -66,6 +67,17 @@ npm run dev
 ```
 
 4. Open [http://localhost:5173](http://localhost:5173) in your browser
+
+## 📧 Email Setup
+
+To enable the contact form to send emails to your inbox:
+
+1. Follow the detailed setup guide in `EMAILJS_SETUP.md`
+2. Create a free account at [EmailJS](https://www.emailjs.com/)
+3. Configure your email service (Gmail, Outlook, etc.)
+4. Copy `.env.example` to `.env.local` and add your EmailJS credentials
+
+The contact form will automatically send emails to your configured email address!
 
 ## 📝 Customization
 

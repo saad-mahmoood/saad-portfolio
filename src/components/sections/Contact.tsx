@@ -7,6 +7,7 @@ import { Send, MapPin, Phone, Mail, Clock, Globe } from 'lucide-react';
 import Button from '../ui/Button';
 import Card from '../ui/Card';
 import { ContactForm } from '../../types';
+import { sendEmail } from '../../utils/emailjs';
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -26,14 +27,24 @@ export default function Contact() {
 
   const onSubmit = async (data: ContactForm) => {
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      console.log('Form submitted:', data);
-      alert('Thank you for your message! I\'ll get back to you within 24 hours.');
+      await sendEmail(data);
+      alert('🎉 Thank you for your message! Your email has been sent successfully. I\'ll get back to you within 24 hours.');
       reset();
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('Something went wrong. Please try again or contact me directly via email.');
+      
+      // More specific error messages
+      let errorMessage = 'Something went wrong. Please try again or contact me directly via email.';
+      
+      if (error instanceof Error) {
+        if (error.message.includes('EmailJS configuration is missing')) {
+          errorMessage = 'Email service is currently being configured. Please contact me directly at saad.mhmoood@gmail.com';
+        } else if (error.message.includes('Forbidden')) {
+          errorMessage = 'There was a temporary issue with the email service. Please try again in a few minutes.';
+        }
+      }
+      
+      alert('❌ ' + errorMessage);
     }
   };
 
