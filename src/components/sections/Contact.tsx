@@ -113,91 +113,93 @@ export default function Contact() {
 
         <div className="grid lg:grid-cols-2 gap-12">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            {/* Glassy Form Card */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-900/40 backdrop-blur-xl rounded-2xl border border-white/20 dark:border-gray-700/30 shadow-2xl"></div>
-            
-            <form onSubmit={handleSubmit(onSubmit)} className="relative p-8 space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
-                  Full Name *
-                </label>
-                <input
-                  {...register('name')}
-                  type="text"
-                  id="name"
-                  className="w-full px-4 py-4 border border-gray-300/50 dark:border-gray-600/50 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/50 dark:bg-gray-800/50 text-gray-900 dark:text-white backdrop-blur-sm transition-all duration-300"
-                  placeholder="Your full name"
-                />
-                {errors.name && (
-                  <p className="mt-2 text-sm text-red-600 dark:text-red-400">
-                    {errors.name.message}
-                  </p>
-                )}
-              </div>
+  initial={{ opacity: 0, x: -20 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.5 }}
+  viewport={{ once: true }}
+  className="relative self-start"
+>
+  {/* Glassy Form Card */}
+  <div className="absolute inset-0 h-full lg:h-auto bg-gradient-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-900/40 backdrop-blur-xl rounded-2xl border border-white/20 dark:border-gray-700/30 shadow-2xl"></div>
 
-              <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
-                  Email Address *
-                </label>
-                <input
-                  {...register('email')}
-                  type="email"
-                  id="email"
-                  className="w-full px-4 py-4 border border-gray-300/50 dark:border-gray-600/50 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/50 dark:bg-gray-800/50 text-gray-900 dark:text-white backdrop-blur-sm transition-all duration-300"
-                  placeholder="your.email@example.com"
-                />
-                {errors.email && (
-                  <p className="mt-2 text-sm text-red-600 dark:text-red-400">
-                    {errors.email.message}
-                  </p>
-                )}
-              </div>
+  <form
+    onSubmit={handleSubmit(onSubmit)}
+    className="relative p-8 space-y-6 h-fit"
+  >
+    <div>
+      <label htmlFor="name" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
+        Full Name *
+      </label>
+      <input
+        {...register('name')}
+        type="text"
+        id="name"
+        className="w-full px-4 py-4 border border-gray-300/50 dark:border-gray-600/50 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/50 dark:bg-gray-800/50 text-gray-900 dark:text-white backdrop-blur-sm transition-all duration-300"
+        placeholder="Your full name"
+      />
+      {errors.name && (
+        <p className="mt-2 text-sm text-red-600 dark:text-red-400">
+          {errors.name.message}
+        </p>
+      )}
+    </div>
 
-              <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
-                  Message *
-                </label>
-                <textarea
-                  {...register('message')}
-                  id="message"
-                  rows={6}
-                  className="w-full px-4 py-4 border border-gray-300/50 dark:border-gray-600/50 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/50 dark:bg-gray-800/50 text-gray-900 dark:text-white resize-none backdrop-blur-sm transition-all duration-300"
-                  placeholder="Tell me about your project or opportunity..."
-                />
-                {errors.message && (
-                  <p className="mt-2 text-sm text-red-600 dark:text-red-400">
-                    {errors.message.message}
-                  </p>
-                )}
-              </div>
+    <div>
+      <label htmlFor="email" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
+        Email Address *
+      </label>
+      <input
+        {...register('email')}
+        type="email"
+        id="email"
+        className="w-full px-4 py-4 border border-gray-300/50 dark:border-gray-600/50 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/50 dark:bg-gray-800/50 text-gray-900 dark:text-white backdrop-blur-sm transition-all duration-300"
+        placeholder="your.email@example.com"
+      />
+      {errors.email && (
+        <p className="mt-2 text-sm text-red-600 dark:text-red-400">
+          {errors.email.message}
+        </p>
+      )}
+    </div>
 
-              <Button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
-                size="lg"
-              >
-                {isSubmitting ? (
-                  <span className="flex items-center">
-                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3"></div>
-                    Sending Message...
-                  </span>
-                ) : (
-                  <>
-                    <Send className="w-5 h-5 mr-2" />
-                    Send Message
-                  </>
-                )}
-              </Button>
-            </form>
-          </motion.div>
+    <div>
+      <label htmlFor="message" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
+        Message *
+      </label>
+      <textarea
+        {...register('message')}
+        id="message"
+        rows={6}
+        className="w-full px-4 py-4 border border-gray-300/50 dark:border-gray-600/50 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/50 dark:bg-gray-800/50 text-gray-900 dark:text-white resize-none backdrop-blur-sm transition-all duration-300"
+        placeholder="Tell me about your project or opportunity..."
+      />
+      {errors.message && (
+        <p className="mt-2 text-sm text-red-600 dark:text-red-400">
+          {errors.message.message}
+        </p>
+      )}
+    </div>
 
+    <Button
+      type="submit"
+      disabled={isSubmitting}
+      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+      size="lg"
+    >
+      {isSubmitting ? (
+        <span className="flex items-center">
+          <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3"></div>
+          Sending Message...
+        </span>
+      ) : (
+        <>
+          <Send className="w-5 h-5 mr-2" />
+          Send Message
+        </>
+      )}
+    </Button>
+  </form>
+</motion.div>
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}

@@ -1,8 +1,64 @@
 import { Project, Experience, Skill } from '../types';
 
 export const projects: Project[] = [
+{
+  id: '1',
+  title: 'Guidera: University Guidance Platform',
+  description: 'AI-powered university guidance and analytics platform with real-time insights, entry test preparation, and intelligent degree recommendations.',
+  longDescription: `Guidera is an advanced AI-powered university guidance platform designed for Pakistani students. It provides personalized  degree recommendations based on user profile and preferences using machine learning models trained on real student data. The system includes real-time analytics dashboards, entry test preparation with mock assessments and AI explanations, intelligent deadline tracking, and comprehensive university listings (fees, courses, criteria, campuses, etc.). It features a powerful chatbot trained to handle career queries, university FAQs, and entry test topics. Guidera supports RESTful APIs, real-time data streaming, and multi-tenant support for future scalability. `,
+  techStack: [
+    'React.js',
+    'Node.js',
+    'Express.js',
+    'PostgreSQL', 
+    'Python', 
+    'FastAPI', 
+    'Flutter', 
+    'Express.js', 
+    'Firebase',
+    'Redis', 
+    'D3.js', 
+    'TensorFlow',
+    'RandomForest',  
+    'TabNet',
+    'xGBoost',
+    'FFN',
+    'Ollama',
+    'Phi' 
+   
+  ],
+  githubUrl: 'https://github.com/guidera-git',
+  liveUrl: 'https://www.linkedin.com/posts/saadmahmoood_fyp-guidera-finalyearproject-activity-7350023708771545090-0sh8?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEKXoi0Bc_U_UYaa91EhIVTn4PzUgr5fuG0',
+  imageUrl: 'https://res.cloudinary.com/drnak5yb2/image/upload/v1753618025/guidera-login_trfoh5.png',
+  screenshots: [
+    'https://res.cloudinary.com/drnak5yb2/image/upload/v1753616658/poster_kqkw5k.jpg?auto=compress&cs=tinysrgb&w=800',
+    'https://res.cloudinary.com/drnak5yb2/image/upload/v1753618026/find-uni_a9kgfu.png?auto=compress&cs=tinysrgb&w=800',
+    'https://res.cloudinary.com/drnak5yb2/image/upload/v1753618026/guidera-save_mxaev1.png?auto=compress&cs=tinysrgb&w=800',
+    'https://res.cloudinary.com/drnak5yb2/image/upload/v1753618029/guidera-analytics_z4tb9p.png?auto=compress&cs=tinysrgb&w=800',
+    'https://res.cloudinary.com/drnak5yb2/image/upload/v1753618025/gudera-test_igktue.png',
+    'https://res.cloudinary.com/drnak5yb2/image/upload/v1753618023/guidera-home_bmhmst.png',
+    'https://res.cloudinary.com/drnak5yb2/image/upload/v1753618021/chatbot_u5etve.png'
+  
+  ]
+}
+,
   {
-    id: '1',
+    id: '2',
+    title: 'Professional Task Management Platform',
+    description: 'A modern, real-time task management platform designed for professional teams to plan, organize, and collaborate efficiently with intuitive UI and smart automation.',
+    longDescription: 'TaskFlow is a professional task and project management platform built with a modern full-stack architecture. It offers a streamlined experience for creating, assigning, and tracking tasks across teams in real time. The platform supports authentication, role-based access, deadline tracking, task prioritization, and an intelligent dashboard for workload overview. It integrates real-time communication using Socket.io and uses PostgreSQL for relational data persistence. Built with Next.js App Router and styled with Tailwind CSS, the UI ensures both performance and responsiveness. The backend is containerized with Docker and orchestrated with modern DevOps practices.',
+    techStack: ['React.js', 'TypeScript', 'Supabase', 'Tailwind', 'Web3.js', 'Netlify'],
+    githubUrl: 'https://github.com/saad-mahmoood/task-flow',
+    liveUrl: 'https://saad-taskflow.netlify.app/',
+    imageUrl: 'https://res.cloudinary.com/drnak5yb2/image/upload/v1753614809/taskflow-dashboard_zkvrol.png',
+    screenshots: [
+      'https://res.cloudinary.com/drnak5yb2/image/upload/v1753614809/taskflow-dashboard_zkvrol.png',
+      'https://res.cloudinary.com/drnak5yb2/image/upload/v1753614816/taskflow-account_rvid6s.png',
+      'https://res.cloudinary.com/drnak5yb2/image/upload/v1753614809/taskflow-tasks_z0y5ev.png'
+    ]
+  },
+    {
+    id: '3',
     title: 'E-Commerce Marketplace Platform',
     description: 'Full-stack MERN e-commerce platform with advanced features like real-time inventory, AI-powered recommendations, and multi-vendor support',
     longDescription: 'A comprehensive e-commerce marketplace built with React, Node.js, and MongoDB. Features include user authentication with JWT, real-time inventory management, AI-powered product recommendations, multi-vendor dashboard, integrated payment processing with Stripe, advanced search and filtering, order tracking, and admin analytics dashboard. Implements microservices architecture for scalability.',
@@ -16,81 +72,8 @@ export const projects: Project[] = [
       'https://images.pexels.com/photos/4968630/pexels-photo-4968630.jpeg?auto=compress&cs=tinysrgb&w=800'
     ]
   },
-  {
-    id: '2',
-    title: 'Real-Time Collaboration Platform',
-    description: 'Advanced project management and team collaboration tool with real-time features, video conferencing, and AI-powered insights',
-    longDescription: 'A comprehensive collaboration platform built with Next.js and PostgreSQL. Features real-time document editing, video conferencing integration, AI-powered project insights, advanced task management, team chat, file sharing with version control, time tracking, and detailed analytics. Uses WebRTC for peer-to-peer communication and implements real-time synchronization with Socket.io.',
-    techStack: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Socket.io', 'WebRTC', 'Redis', 'Docker', 'Vercel'],
-    githubUrl: 'https://github.com/saad-mahmoood/collaboration-platform',
-    liveUrl: 'https://collab-platform-demo.vercel.app',
-    imageUrl: 'https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=800',
-    screenshots: [
-      'https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800'
-    ]
-  },
-  {
-    id: '3',
-    title: 'AI-Powered Analytics Dashboard',
-    description: 'Enterprise-grade analytics platform with machine learning insights, real-time data processing, and interactive visualizations',
-    longDescription: 'An advanced analytics dashboard that processes large datasets in real-time using React and Python. Features include machine learning-powered insights, predictive analytics, custom report generation, real-time data streaming, interactive charts with D3.js, automated alerts, and multi-tenant architecture. Integrates with multiple data sources and provides RESTful APIs for third-party integrations.',
-    techStack: ['React', 'Python', 'FastAPI', 'PostgreSQL', 'Redis', 'D3.js', 'TensorFlow', 'Docker', 'Kubernetes', 'AWS'],
-    githubUrl: 'https://github.com/saad-mahmoood/analytics-dashboard',
-    liveUrl: 'https://analytics-dashboard-demo.vercel.app',
-    imageUrl: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800',
-    screenshots: [
-      'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?auto=compress&cs=tinysrgb&w=800'
-    ]
-  },
-  {
-    id: '4',
-    title: 'Smart IoT Device Management System',
-    description: 'Enterprise IoT platform for device monitoring, data collection, and automated control with real-time dashboards',
-    longDescription: 'A comprehensive IoT management system built with MERN stack and MQTT protocol. Features include real-time device monitoring, automated data collection, predictive maintenance alerts, remote device control, energy consumption analytics, and scalable architecture supporting thousands of devices. Implements edge computing for reduced latency and includes mobile app for on-the-go management.',
-    techStack: ['React', 'Node.js', 'MongoDB', 'MQTT', 'InfluxDB', 'Grafana', 'Docker', 'Kubernetes', 'React Native'],
-    githubUrl: 'https://github.com/saad-mahmoood/iot-management-system',
-    liveUrl: 'https://iot-platform-demo.vercel.app',
-    imageUrl: 'https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=800',
-    screenshots: [
-      'https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/159304/network-cable-ethernet-computer-159304.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=800'
-    ]
-  },
-  {
-    id: '5',
-    title: 'Blockchain-Based Supply Chain Tracker',
-    description: 'Decentralized supply chain management system using blockchain technology for transparency and traceability',
-    longDescription: 'A revolutionary supply chain tracking system built on Ethereum blockchain with React frontend. Features include immutable transaction records, real-time shipment tracking, smart contract automation, multi-party verification, QR code integration, and comprehensive audit trails. Ensures complete transparency from manufacturer to end consumer with cryptographic security.',
-    techStack: ['React', 'Solidity', 'Web3.js', 'Ethereum', 'IPFS', 'Node.js', 'MongoDB', 'MetaMask Integration'],
-    githubUrl: 'https://github.com/saad-mahmoood/blockchain-supply-chain',
-    liveUrl: 'https://supply-chain-tracker-demo.vercel.app',
-    imageUrl: 'https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=800',
-    screenshots: [
-      'https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/6802042/pexels-photo-6802042.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg?auto=compress&cs=tinysrgb&w=800'
-    ]
-  },
-  {
-    id: '6',
-    title: 'AI-Powered Learning Management System',
-    description: 'Intelligent LMS with personalized learning paths, automated grading, and advanced analytics for educational institutions',
-    longDescription: 'A next-generation learning management system powered by AI and built with modern web technologies. Features include personalized learning recommendations, automated essay grading using NLP, interactive virtual classrooms, progress tracking with predictive analytics, plagiarism detection, and adaptive testing. Supports multiple content formats and integrates with popular educational tools.',
-    techStack: ['Next.js', 'Python', 'TensorFlow', 'PostgreSQL', 'Redis', 'WebRTC', 'OpenAI API', 'Docker', 'AWS'],
-    githubUrl: 'https://github.com/saad-mahmoood/ai-learning-platform',
-    liveUrl: 'https://ai-lms-demo.vercel.app',
-    imageUrl: 'https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg?auto=compress&cs=tinysrgb&w=800',
-    screenshots: [
-      'https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/4144923/pexels-photo-4144923.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800'
-    ]
-  }
+  
+
 ];
 
 export const experiences: Experience[] = [
