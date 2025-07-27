@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { Send, MapPin, Phone, Mail, Clock, Globe } from 'lucide-react';
+import { Send, MapPin, Phone, Mail, Clock, Globe, Copy } from 'lucide-react';
 import Button from '../ui/Button';
-import Card from '../ui/Card';
-import { ContactForm } from '../../types';
+import { sendContactEmail, copyEmailToClipboard, ContactFormData } from '../../services/emailService';
+import { useToast } from '../../hooks/useToast';
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -15,25 +15,39 @@ const contactSchema = z.object({
 });
 
 export default function Contact() {
+  const { showSuccess, showError } = useToast();
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
     reset
-  } = useForm<ContactForm>({
+  } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema)
   });
 
-  const onSubmit = async (data: ContactForm) => {
+  const onSubmit = async (data: ContactFormData) => {
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      console.log('Form submitted:', data);
-      alert('Thank you for your message! I\'ll get back to you within 24 hours.');
+      await sendContactEmail(data);
+      showSuccess(
+        'Message Sent Successfully!',
+        'Thank you for your message. I\'ll get back to you within 24 hours. You should also receive a confirmation email shortly.'
+      );
       reset();
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('Something went wrong. Please try again or contact me directly via email.');
+      showError(
+        'Failed to Send Message',
+        'Something went wrong. Please try again or contact me directly via email.'
+      );
+    }
+  };
+
+  const handleCopyEmail = async () => {
+    try {
+      await copyEmailToClipboard();
+      showSuccess('Email Copied!', 'saad.mhmoood@gmail.com has been copied to your clipboard.');
+    } catch (error) {
+      showError('Copy Failed', 'Failed to copy email to clipboard. Please copy manually.');
     }
   };
 
@@ -49,7 +63,8 @@ export default function Contact() {
       label: 'Email',
       value: 'saad.mhmoood@gmail.com',
       color: 'text-red-500',
-      href: 'mailto:saad.mhmoood@gmail.com'
+      href: 'mailto:saad.mhmoood@gmail.com',
+      copyable: true
     },
     {
       icon: <Phone className="w-6 h-6" />,
@@ -217,29 +232,40 @@ export default function Contact() {
                     <div className="absolute inset-0 bg-gradient-to-br from-white/60 to-white/30 dark:from-gray-800/60 dark:to-gray-900/30 backdrop-blur-lg rounded-xl border border-white/30 dark:border-gray-700/30 shadow-lg group-hover:shadow-xl transition-all duration-300"></div>
                     
                     <div className="relative p-6">
-                      <div className="flex items-center space-x-4">
-                        <div className={`p-3 rounded-xl ${info.color} bg-opacity-10 backdrop-blur-sm`}>
-                          <div className={info.color}>
-                            {info.icon}
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-4">
+                          <div className={`p-3 rounded-xl ${info.color} bg-opacity-10 backdrop-blur-sm`}>
+                            <div className={info.color}>
+                              {info.icon}
+                            </div>
+                          </div>
+                          <div>
+                            <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">
+                              {info.label}
+                            </p>
+                            {info.href ? (
+                              <a
+                                href={info.href}
+                                className="text-gray-900 dark:text-white font-semibold hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                              >
+                                {info.value}
+                              </a>
+                            ) : (
+                              <p className="text-gray-900 dark:text-white font-semibold">
+                                {info.value}
+                              </p>
+                            )}
                           </div>
                         </div>
-                        <div>
-                          <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">
-                            {info.label}
-                          </p>
-                          {info.href ? (
-                            <a
-                              href={info.href}
-                              className="text-gray-900 dark:text-white font-semibold hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                            >
-                              {info.value}
-                            </a>
-                          ) : (
-                            <p className="text-gray-900 dark:text-white font-semibold">
-                              {info.value}
-                            </p>
-                          )}
-                        </div>
+                        {info.copyable && (
+                          <button
+                            onClick={handleCopyEmail}
+                            className="p-2 rounded-lg text-gray-400 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200 flex-shrink-0"
+                            title="Copy email to clipboard"
+                          >
+                            <Copy className="w-4 h-4" />
+                          </button>
+                        )}
                       </div>
                     </div>
                   </div>

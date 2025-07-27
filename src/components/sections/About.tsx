@@ -1,6 +1,8 @@
+// src/components/sections/About.tsx
+
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, Users, Lightbulb, Award, Target, Zap } from 'lucide-react';
+import { Code, Users, Lightbulb, Award, Target, Zap, Download } from 'lucide-react';
 import Card from '../ui/Card';
 
 export default function About() {
@@ -38,9 +40,37 @@ export default function About() {
   ];
 
   const certifications = [
-    'IBM Full Stack Software Developer Professional Certificate',
-    'Meta Back-End Developer Specialization',
-    'Agile & DevOps Specialization'
+
+    {
+      title: 'IBM Full Stack Software Developer Professional Certificate',
+      url: 'https://www.coursera.org/account/accomplishments/professional-cert/0HG1OU0P5MX3'
+    },
+
+    {
+      title: 'DevOps, Cloud, and Agile Foundations',
+      url: 'https://www.coursera.org/account/accomplishments/specialization/2UE8MM7FFUDZ'
+    },
+    {
+      title: 'Python for Everybody',
+      url: 'https://www.coursera.org/account/accomplishments/specialization/SL678IIX76H8'
+    },
+    {
+      title: 'Django Application Development with SQL and Databases',
+      url: 'https://www.coursera.org/account/accomplishments/verify/OXDIOYV1Y63Q'
+    },
+    {
+      title: 'Introduction to Test and Behavior Driven Development',
+      url: 'https://www.coursera.org/account/accomplishments/verify/N4C399XMKJWB'
+    },
+    {
+      title: 'Continuous Integration and Continuous Delivery (CI/CD)',
+      url: 'https://www.coursera.org/account/accomplishments/verify/DFUX0G223BFQ'
+    },
+    {
+      title: 'Developing Back-End Apps with Node.js and Express',
+      url: 'https://www.coursera.org/account/accomplishments/verify/DJZ7TWJZSZX4'
+    }
+
   ];
 
   return (
@@ -77,22 +107,22 @@ export default function About() {
           >
             <div className="prose prose-lg dark:prose-invert max-w-none">
               <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-6">
-                I'm a recent Computer Science graduate from <strong>UCP Lahore</strong> with a deep passion for 
-                building modern web applications. My journey into programming started during my 
-                early university years, and I've been fascinated by the power of technology to 
+                I'm a recent Computer Science graduate from <strong>UCP Lahore</strong> with a deep passion for
+                building modern web applications. My journey into programming started during my
+                early university years, and I've been fascinated by the power of technology to
                 solve real-world problems ever since.
               </p>
-              
+
               <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-6">
-                I specialize in <strong>MERN stack development</strong> with hands-on experience from my 
-                internships at <strong>DHA Lahore Official</strong> and <strong>lalaland.pk</strong>. I'm particularly 
-                interested in creating seamless user experiences and writing clean, maintainable 
+                I specialize in <strong>MERN stack development</strong> with hands-on experience from my
+                internships at <strong>DHA Lahore Official</strong> and <strong>lalaland.pk</strong>. I'm particularly
+                interested in creating seamless user experiences and writing clean, maintainable
                 code that scales well.
               </p>
 
               <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-6">
-                Beyond coding, I'm passionate about continuous learning and staying updated with 
-                the latest technologies. I've completed several professional certifications from 
+                Beyond coding, I'm passionate about continuous learning and staying updated with
+                the latest technologies. I've completed several professional certifications from
                 Meta and actively contribute to open-source projects.
               </p>
             </div>
@@ -104,10 +134,17 @@ export default function About() {
                 Certifications
               </h3>
               <ul className="space-y-2">
-                {certifications.map((cert, index) => (
-                  <li key={index} className="text-gray-700 dark:text-gray-300 flex items-start">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    {cert}
+                {certifications.map((cert, idx) => (
+                  <li key={idx} className="text-gray-700 dark:text-gray-300 flex items-center">
+                    <Download className="w-4 h-4 mr-2 text-blue-600" />
+                    <a
+                      href={cert.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:text-blue-800 dark:hover:text-blue-400"
+                    >
+                      {cert.title}
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -141,7 +178,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ 
+                whileHover={{
                   scale: 1.05,
                   rotateY: 5,
                   transition: { duration: 0.3 }
@@ -151,10 +188,10 @@ export default function About() {
                 <div className="relative">
                   {/* Glassy Card Effect */}
                   <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-white/40 dark:from-gray-800/80 dark:to-gray-900/40 backdrop-blur-xl rounded-2xl border border-white/20 dark:border-gray-700/30 shadow-xl group-hover:shadow-2xl transition-all duration-500"></div>
-                  
+
                   <div className="relative p-6">
                     <div className="flex items-start space-x-4">
-                      <motion.div 
+                      <motion.div
                         className="flex-shrink-0 p-3 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl text-white shadow-lg"
                         whileHover={{ rotate: 360 }}
                         transition={{ duration: 0.5 }}

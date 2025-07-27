@@ -8,6 +8,7 @@ import Experience from './components/sections/Experience';
 import Skills from './components/sections/Skills';
 import Contact from './components/sections/Contact';
 import Footer from './components/Footer';
+import ToastContainer from './components/ToastContainer';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Experience />
         <Skills />
         <Contact />
+        <ToastContainer />
       </motion.main>
       
       <Footer />

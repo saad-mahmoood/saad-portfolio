@@ -132,10 +132,6 @@ export default function Skills() {
           ))}
         </div>
 
-        {/* Floating Elements */}
-        <div className="absolute top-20 left-10 w-4 h-4 bg-blue-500/30 rounded-full animate-bounce delay-1000"></div>
-        <div className="absolute top-40 right-20 w-6 h-6 bg-purple-500/30 rounded-full animate-bounce delay-2000"></div>
-        <div className="absolute bottom-20 left-1/4 w-3 h-3 bg-emerald-500/30 rounded-full animate-bounce delay-3000"></div>
       </div>
     </section>
   );
