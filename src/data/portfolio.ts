@@ -72,6 +72,25 @@ export const projects: Project[] = [
       'https://images.pexels.com/photos/4968630/pexels-photo-4968630.jpeg?auto=compress&cs=tinysrgb&w=800'
     ]
   },
+  {
+    id: '4',
+    title: 'Saher Flow Solutions Official Site',
+    description: 'Full-stack MERN application for official deployemnt of SaherFlow Solutions, featuring real-time satellite updates and notifications.',
+    longDescription: 'Previous wordpress iste was pethtaic and not user friendly, so we decided to build a full-stack MERN application for the official deployment of SaherFlow Solutions. The site features real-time satellite updates and notifications, utilizing Firebase for backend services and real-time data synchronization. The site is designed to be responsive and user-friendly, with a focus on providing real-time information to users.',
+    techStack: ['React', 'Node.js', 'Express', 'MongoDB', 'Redis', 'Socket.io', 'Stripe API', 'JWT', 'Docker', 'AWS S3'],
+    githubUrl: 'https://github.com/saad-mahmoood/saherflow-website.git',
+    liveUrl: 'https://saad-saherflow.netlify.app/',
+    imageUrl: 'https://res.cloudinary.com/drnak5yb2/image/upload/v1754639160/news_tqu5ko.png',
+    screenshots: [
+      'https://res.cloudinary.com/drnak5yb2/image/upload/v1754639158/home1_hhrmuu.png',
+      'https://res.cloudinary.com/drnak5yb2/image/upload/v1754639157/product_w9p5sr.png',
+      'https://res.cloudinary.com/drnak5yb2/image/upload/v1754639157/service_erpdpv.png',
+      'https://res.cloudinary.com/drnak5yb2/image/upload/v1754639156/home5_cevf0i.png',
+      'https://res.cloudinary.com/drnak5yb2/image/upload/v1754639156/careers_jkyj3i.png',
+      'https://res.cloudinary.com/drnak5yb2/image/upload/v1754639156/contact_n0uvb1.png'
+      
+    ]
+  },
   
 
 ];

@@ -70,7 +70,7 @@ export default function Hero() {
             className="mb-8"
           >
             <h2 className="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300 mb-4">
-              Full Stack Software Developer
+              Full Stack Software Enginner @ Saher Flow Solutions
             </h2>
             <div className="flex items-center justify-center space-x-6 text-gray-600 dark:text-gray-400 mb-6">
               <div className="flex items-center space-x-2">

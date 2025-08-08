@@ -31,6 +31,15 @@ const experiences: ExperienceItem[] = [
       'Developed an Android app in Kotlin for delivery personnel with XML layouts and Retrofit integration, consuming Laravel-based REST APIs while managing data with MySQL for backend operations.',
     techStack: ['Kotlin', 'XML', 'Retrofit', 'MySQL', 'REST APIs'],
   },
+    {
+    role: 'Software Engineer',
+    company: 'Saher Flow Solutions',
+    location: 'Thuwal, Saudi Arabia',
+    period: 'Aug 2025 - Present',
+    description:
+      'Developed their official site ann IOS app in Flutter for realtime stalletite updates and notifications, utilizing Firebase for backend services and real-time data synchronization.',
+    techStack: ['MERN', 'Flutter', 'BodBus', 'MySQL', 'REST APIs'],
+  },
 ];
 
 export default function Experience() {
