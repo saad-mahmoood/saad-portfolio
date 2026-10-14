@@ -93,7 +93,7 @@ export default function About() {
             About Me
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            A passionate Computer Science graduate with expertise in full-stack development
+            Full-stack engineer shipping production web, mobile, and automation products
           </p>
         </motion.div>
 
@@ -107,23 +107,26 @@ export default function About() {
           >
             <div className="prose prose-lg dark:prose-invert max-w-none">
               <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-6">
-                I'm a recent Computer Science graduate from <strong>UCP Lahore</strong> with a deep passion for
-                building modern web applications. My journey into programming started during my
-                early university years, and I've been fascinated by the power of technology to
-                solve real-world problems ever since.
+                I&apos;m a Software Engineering graduate from the <strong>University of Central Punjab (UCP)</strong> and a software
+                engineer at <strong>Saher Flow Solutions</strong> since August 2025. On that job I have
+                three products: a React rebuild of their WordPress website, the <strong>NEXUS</strong>{' '}
+                industrial IoT sensor platform, and the <strong>Fieldview</strong> app.
               </p>
 
               <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-6">
-                I specialize in <strong>MERN stack development</strong> with hands-on experience from my
-                internships at <strong>DHA Lahore Official</strong> and <strong>lalaland.pk</strong>. I'm particularly
-                interested in creating seamless user experiences and writing clean, maintainable
-                code that scales well.
+                Alongside that I deliver client work end to end. The largest is the{' '}
+                <strong>Habib Construction Services</strong> website, which I designed, built, and
+                deployed on my own. Before that I took <strong>Faha</strong> from design through
+                deployment, and I built a daily <strong>PSX portfolio tracker</strong> that turns a
+                company&apos;s long manual checks into an automated sheet.
               </p>
 
               <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-6">
-                Beyond coding, I'm passionate about continuous learning and staying updated with
-                the latest technologies. I've completed several professional certifications from
-                Meta and actively contribute to open-source projects.
+                I am also the app developer on <strong>Narration</strong>, a React Native bedtime-stories
+                app. Parents review and approve a story before a child can hear it. I own the mobile
+                frontend: separate parent and child shells, the /v1 API, and the welcome flow from the
+                product wireframes. Earlier, <strong>Guidera</strong> and internships at{' '}
+                <strong>DHA Lahore</strong> and <strong>lalaland.pk</strong> built the MERN and Android base I still use.
               </p>
             </div>
 
@@ -152,7 +155,7 @@ export default function About() {
 
             {/* Tech Stack Tags */}
             <div className="flex flex-wrap gap-3">
-              {['React.js', 'Node.js', 'TypeScript', 'MongoDB', 'PostgreSQL', 'Next.js', 'Express.js', 'Kotlin'].map((tech) => (
+              {['React.js', 'React Native', 'TypeScript', 'Node.js', 'MongoDB', 'PostgreSQL', 'Next.js', 'Expo'].map((tech) => (
                 <motion.span
                   key={tech}
                   whileHover={{ scale: 1.05 }}

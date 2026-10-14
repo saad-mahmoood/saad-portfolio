@@ -2,45 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, Calendar, MapPin } from 'lucide-react';
 import Card from '../ui/Card';
-
-interface ExperienceItem {
-  role: string;
-  company: string;
-  location: string;
-  period: string;
-  description: string;
-  techStack: string[];
-}
-
-const experiences: ExperienceItem[] = [
-  {
-    role: 'MERN Intern',
-    company: 'DHA Lahore Official',
-    location: 'Lahore, Pakistan',
-    period: 'July 2024 - Sep 2024',
-    description:
-      'Developed dynamic, responsive MERN stack pages for the Internship Portal using React.js. Assisted in developing RESTful APIs with Node.js and Express while managing scalable data using MongoDB.',
-    techStack: ['React.js', 'Node.js', 'Express', 'MongoDB', 'REST APIs'],
-  },
-  {
-    role: 'Android Development Intern',
-    company: 'lalaland.pk',
-    location: 'Lahore, Pakistan',
-    period: 'Aug 2023 - Oct 2023',
-    description:
-      'Developed an Android app in Kotlin for delivery personnel with XML layouts and Retrofit integration, consuming Laravel-based REST APIs while managing data with MySQL for backend operations.',
-    techStack: ['Kotlin', 'XML', 'Retrofit', 'MySQL', 'REST APIs'],
-  },
-    {
-    role: 'Software Engineer',
-    company: 'Saher Flow Solutions',
-    location: 'Thuwal, Saudi Arabia',
-    period: 'Aug 2025 - Present',
-    description:
-      'Developed their official site ann IOS app in Flutter for realtime stalletite updates and notifications, utilizing Firebase for backend services and real-time data synchronization.',
-    techStack: ['MERN', 'Flutter', 'BodBus', 'MySQL', 'REST APIs'],
-  },
-];
+import { experiences } from '../../data/portfolio';
 
 export default function Experience() {
   return (
@@ -57,14 +19,14 @@ export default function Experience() {
             Experience
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            My journey so far working with dynamic teams and technologies to build scalable, user-centric applications.
+            Saher Flow since August 2025, the Narration app, client products, and two internships.
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
           {experiences.map((exp, index) => (
             <motion.div
-              key={exp.role}
+              key={exp.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}

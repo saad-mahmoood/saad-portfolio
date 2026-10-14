@@ -24,7 +24,7 @@ export default function Projects() {
             Featured Projects
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            A collection of projects showcasing my skills in full-stack development
+            Saher Flow products, client deliveries, and the Narration app
           </p>
         </motion.div>
 
@@ -129,7 +129,7 @@ export default function Projects() {
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                 Description
               </h3>
-              <p className="text-gray-600 dark:text-gray-300">
+              <p className="text-gray-600 dark:text-gray-300 whitespace-pre-line">
                 {selectedProject.longDescription}
               </p>
             </div>

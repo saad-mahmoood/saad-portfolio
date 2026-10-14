@@ -12,11 +12,12 @@ export interface Project {
 
 export interface Experience {
   id: string;
-  title: string;
+  role: string;
   company: string;
-  duration: string;
+  location: string;
+  period: string;
   description: string;
-  type: 'work' | 'education';
+  techStack: string[];
 }
 
 export interface Skill {

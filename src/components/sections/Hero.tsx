@@ -70,7 +70,7 @@ export default function Hero() {
             className="mb-8"
           >
             <h2 className="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300 mb-4">
-              Full Stack Software Enginner @ Saher Flow Solutions
+              Full Stack Software Engineer @ Saher Flow Solutions
             </h2>
             <div className="flex items-center justify-center space-x-6 text-gray-600 dark:text-gray-400 mb-6">
               <div className="flex items-center space-x-2">
@@ -90,11 +90,10 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Passionate about building scalable web applications with{' '}
-            <span className="text-blue-600 dark:text-blue-400 font-semibold">React</span>,{' '}
-            <span className="text-green-600 dark:text-green-400 font-semibold">Node.js</span>, and{' '}
-            <span className="text-purple-600 dark:text-purple-400 font-semibold">modern technologies</span>.
-            Experienced in MERN stack development with a focus on clean code and user experience.
+            Software engineer at Saher Flow Solutions since August 2025, shipping the NEXUS
+            industrial IoT platform, the Fieldview app, and a React rebuild of their WordPress site.
+            I also take client products from design through deployment — including Habib Construction
+            Services — and I am the app developer on Narration, a React Native bedtime-stories app.
           </motion.p>
 
           <motion.div
